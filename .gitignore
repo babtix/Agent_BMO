@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment & secrets
+.env
+*.env
+
+# Logs
+logs/
+*.log
+
+# Sessions (auto-generated conversation saves)
+sessions/
+
+# Temp audio files created at runtime
+_cmd_*.wav
+_wake_*.wav
+_tts_*.mp3
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
