@@ -14,12 +14,13 @@ from typing import Optional
 import customtkinter as ctk
 from PIL import Image
 
+from src.utils.paths import get_base_path
 from src.utils.logger import get_logger
 
 log = get_logger("face_widget")
 
-# Resolve the assets/faces/ directory relative to this file
-_FACES_DIR = Path(__file__).resolve().parents[2] / "assets" / "faces"
+# Resolve the assets/faces/ directory relative to the base path (MEIPASS in exe)
+_FACES_DIR = get_base_path() / "assets" / "faces"
 
 # Map logical state names → image filenames (without extension)
 _STATE_IMAGE_MAP = {

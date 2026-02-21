@@ -7,7 +7,9 @@ from pathlib import Path
 from datetime import datetime
 
 
-LOG_DIR = Path(__file__).parent.parent.parent / "logs"
+from src.utils.paths import get_executable_dir
+
+LOG_DIR = get_executable_dir() / "logs"
 LOG_DIR.mkdir(exist_ok=True)
 
 LOG_FILE = LOG_DIR / f"assistant_{datetime.now().strftime('%Y%m%d')}.log"

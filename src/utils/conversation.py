@@ -8,12 +8,13 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Optional
 
+from src.utils.paths import get_executable_dir
 from src.utils.logger import get_logger
 from src.utils.config import Config
 
 log = get_logger("conversation")
 
-ROOT = Path(__file__).parent.parent.parent
+ROOT = get_executable_dir()
 
 
 class ConversationManager:

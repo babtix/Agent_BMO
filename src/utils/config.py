@@ -49,11 +49,13 @@ from typing import Any
 
 from dotenv import load_dotenv
 
+from src.utils.paths import get_executable_dir
 from src.utils.logger import get_logger
 
 log = get_logger("config")
 
-ROOT = Path(__file__).parent.parent.parent  # my_assistant_v4/
+# ROOT for config/secrets should be where the executable lives
+ROOT = get_executable_dir()
 
 
 class Config:

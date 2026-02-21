@@ -1,0 +1,139 @@
+========================================
+Voice Assistant BMO - Build Instructions
+========================================
+
+QUICK START
+-----------
+1. Build executable:
+   python -m PyInstaller BMO_v4.spec
+
+2. Build installer:
+   build_installer.bat
+
+3. Find installer:
+   ..\installer_output\VoiceAssistant_BMO_Setup_v4.0.0_x64.exe
+
+
+PREREQUISITES
+-------------
+✓ Python 3.8+
+✓ PyInstaller (pip install pyinstaller)
+✓ Inno Setup 6 (https://jrsoftware.org/isdl.php)
+✓ All dependencies installed (pip install -r requirements.txt)
+
+
+FILES NEEDED
+------------
+✓ BMO_installer.iss - Installer script (READY TO USE)
+✓ dist\BMO_v4.exe - Built executable
+✓ config.json - Configuration file
+✓ .env - Environment template
+✓ ico.ico - Application icon
+
+
+STEP-BY-STEP
+------------
+1. Install Inno Setup 6
+   Download: https://jrsoftware.org/isdl.php
+   Install to: C:\Program Files (x86)\Inno Setup 6\
+
+2. Build the executable
+   cd my_assistant_v4
+   python -m PyInstaller BMO_v4.spec --clean
+
+3. Verify executable exists
+   Check: dist\BMO_v4.exe
+
+4. Run build script
+   build_installer.bat
+
+5. Find your installer
+   Location: ..\installer_output\
+   File: VoiceAssistant_BMO_Setup_v4.0.0_x64.exe
+
+
+INSTALLER FEATURES
+------------------
+✓ API key configuration wizard
+✓ Ollama installation check
+✓ Desktop shortcut (optional)
+✓ Start menu shortcuts
+✓ Uninstaller with keep settings option
+✓ Multi-language support (English, French, Spanish, German)
+✓ Automatic directory creation
+✓ Registry entries for file associations
+
+
+WHAT GETS INSTALLED
+-------------------
+C:\Program Files\Voice Assistant BMO\
+├── BMO_v4.exe          # Main application
+├── config.json         # Configuration
+├── var_venv            # API keys (user configurable)
+├── sessions\           # User sessions
+└── logs\               # Application logs
+
+User Data:
+%APPDATA%\Voice Assistant BMO\
+├── sessions\           # User sessions backup
+└── logs\               # User logs
+
+
+CUSTOMIZATION
+-------------
+Edit BMO_installer.iss to change:
+- App name and version
+- Publisher information
+- URLs and links
+- Installation directory
+- Shortcuts and icons
+- Languages
+
+
+TESTING
+-------
+1. Test on clean Windows VM
+2. Run installer
+3. Enter API key (or skip)
+4. Complete installation
+5. Launch application
+6. Verify functionality
+7. Test uninstaller
+8. Check "keep settings" option
+
+
+DISTRIBUTION
+------------
+Share the installer file:
+VoiceAssistant_BMO_Setup_v4.0.0_x64.exe
+
+Users need:
+- Windows 10/11 (64-bit)
+- Ollama installed (https://ollama.com)
+- Groq API key (https://console.groq.com)
+
+
+TROUBLESHOOTING
+---------------
+Problem: "Executable not found"
+Solution: Run: python -m PyInstaller BMO_v4.spec
+
+Problem: "Inno Setup not found"
+Solution: Install from https://jrsoftware.org/isdl.php
+
+Problem: "Build failed"
+Solution: Check error messages, verify all files exist
+
+Problem: "Installer won't run"
+Solution: Right-click → Run as administrator
+
+
+SUPPORT
+-------
+GitHub: https://github.com/babtix/Agent_BMO
+Instagram: https://www.instagram.com/papitx0/
+
+
+========================================
+Ready to build? Run: build_installer.bat
+========================================
